@@ -19,5 +19,8 @@ $(OBJ)/%.o: $(SRC)/%.cpp
 	mkdir -p $(OBJ)
 	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
+run: $(BIN)
+	./$(BINDIR)/$(BIN)
+
 clean:
 	rm -rf $(BINDIR)/* $(OBJ)/*
