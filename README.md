@@ -18,11 +18,7 @@ clang++ --version
 ```
 
 #### Installation
-* Clone the Repository
-```bash
-git clone https://github.com/eloidieme/LRU-Cache.git
-cd GLmacOS
-```
+* Using the green button saying "Use template" on the GitHub page, you can create a repo from this template to start working.
 * Build the Project
 Use the provided Makefile to compile the project:
 ```bash
