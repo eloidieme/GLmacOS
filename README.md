@@ -20,7 +20,7 @@ clang++ --version
 #### Installation
 * Clone the Repository
 ```bash
-git clone https://github.com/eloidieme/LRU-Cache.git
+git clone https://github.com/eloidieme/GLmacOS.git
 cd GLmacOS
 ```
 * Build the Project
