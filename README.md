@@ -38,4 +38,4 @@ After building the project, you can run the program using:
 
 ### Usage
 
-The example app just displays a black screen and checks if everything works with GLFW.
+The example app just displays a dark green-blueish color and checks if everything works with GLFW.
