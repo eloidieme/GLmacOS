@@ -38,4 +38,4 @@ make run
 
 ### Usage
 
-The example app just displays a color-changing rectangle over a dark green-blueish background and checks if everything works with GLFW, glad and GLM.
+The example app just displays a gradient-colored triangle over a dark green-blueish background.
