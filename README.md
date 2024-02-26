@@ -33,9 +33,9 @@ make clean
 #### Running the Program
 After building the project, you can run the program using:
 ```bash
-./bin/app
+make run
 ```
 
 ### Usage
 
-The example app just displays a dark green-blueish color and checks if everything works with GLFW.
+The example app just displays a color-changing rectangle over a dark green-blueish background and checks if everything works with GLFW, glad and GLM.
