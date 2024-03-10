@@ -38,4 +38,4 @@ make run
 
 ### Usage
 
-The example app just displays a gradient-colored triangle over a dark green-blueish background.
+The example app displays cubes with textures and features a moving and rotating camera.
