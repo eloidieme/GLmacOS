@@ -17,6 +17,7 @@
 				"${workspaceFolder}/src/glad.cpp",
 				"${workspaceFolder}/dependencies/library/libglfw.3.3.dylib",
 				"${workspaceFolder}/dependencies/library/libGLEW.2.2.0.dylib",
+				"${workspaceFolder}/dependencies/library/libassimp.5.3.0.dylib",
 				"-o",
 				"${workspaceFolder}/bin/app",
 				"-framework",

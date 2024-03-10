@@ -3,6 +3,9 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <assimp/Importer.hpp>
+#include <assimp/scene.h>
+#include <assimp/postprocess.h>
 #include "shader.hpp"
 #include "camera.hpp"
 #include "stb_image.hpp"
@@ -35,6 +38,20 @@ int main()
 #ifdef __APPLE__
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 #endif
+
+    Assimp::Importer importer;
+    const aiScene* scene = importer.ReadFile("./assets/models/box_longline.obj", 
+        aiProcess_Triangulate | 
+        aiProcess_JoinIdenticalVertices | 
+        aiProcess_SortByPType);
+
+    if (!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode) {
+        std::cerr << "ERROR::ASSIMP::" << importer.GetErrorString() << std::endl;
+        return -1;
+    }
+
+    std::cout << "Loaded model successfully!" << std::endl;
+    std::cout << "Number of meshes: " << scene->mNumMeshes << std::endl;
 
     GLFWwindow *window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
     if (window == NULL)
