@@ -25,7 +25,6 @@ public:
     // camera Attributes
     glm::vec3 Position;
     glm::vec3 Front;
-    glm::vec3 DirFront;
     glm::vec3 Up;
     glm::vec3 Right;
     glm::vec3 WorldUp;
@@ -66,9 +65,9 @@ public:
     {
         float velocity = MovementSpeed * deltaTime;
         if (direction == FORWARD)
-            Position += DirFront * velocity;
+            Position += Front * velocity;
         if (direction == BACKWARD)
-            Position -= DirFront * velocity;
+            Position -= Front * velocity;
         if (direction == LEFT)
             Position -= Right * velocity;
         if (direction == RIGHT)
@@ -107,15 +106,10 @@ private:
     void updateCameraVectors()
     {
         glm::vec3 front;
-        glm::vec3 dirFront;
         front.x = cos(glm::radians(Yaw)) * cos(glm::radians(Pitch));
         front.y = sin(glm::radians(Pitch));
         front.z = sin(glm::radians(Yaw)) * cos(glm::radians(Pitch));
-        dirFront.x = cos(glm::radians(Yaw)) * cos(glm::radians(Pitch));
-        dirFront.y = 0.0f;
-        dirFront.z = sin(glm::radians(Yaw)) * cos(glm::radians(Pitch));
         Front = glm::normalize(front);
-        DirFront = glm::normalize(dirFront);
         Right = glm::normalize(glm::cross(Front, WorldUp)); 
         Up = glm::normalize(glm::cross(Right, Front));
     }
